@@ -11,6 +11,7 @@ namespace PraktyczeKursy.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            //komentarz
             return View();
         }
     }
