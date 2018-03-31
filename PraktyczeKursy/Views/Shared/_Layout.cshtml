@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div style="overflow: hidden;">
+            <a id="koszykHeaderLink" href="link">
+                Koszyk (0)
+                <span></span>
+            </a>
+            <a id="indexHeaderLogo" href="link">
+                <img src="@Url.Content("~/Content/Images/logo.png")" class="center" />
+            </a>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+    <footer>
+        <nav>
+            <ul>
+                <li>@Html.ActionLink("O nas", "StronyStatyczne", "Home", new { nazwa = "O nas" })</li>
+                <li>@Html.ActionLink("Społeczność", "StronyStatyczne", "Home", new { nazwa = "Spolecznosc" })</li>
+                <li>@Html.ActionLink("Opinie", "StronyStatyczne", "Home", new { nazwa = "Opinie" })</li>
+                <li>@Html.ActionLink("Pomoc", "StronyStatyczne", "Home", new { nazwa = "Pomoc" })</li>
+                <li><a href="@Url.Action("StronyStatyczne", "Home", new { nazwa = "Kontakt"})">Kontakt</a></li>
+            </ul>
+        </nav>
+        <div id="footerLogo">
+        </div>
+        <div id="footerCopyright">
+            Copyright &copy; 2018 P. Kursy
+        </div>
+    </footer>
+    @RenderSection("Scripts", required:false)
+</body>
+</html>

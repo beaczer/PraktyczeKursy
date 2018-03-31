@@ -50,6 +50,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Glimpse.AspNet, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.1.8.2\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -95,15 +104,77 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\ajax-loader.png" />
+    <Content Include="Content\Images\baner.png" />
+    <Content Include="Content\Images\bestseller.png" />
+    <Content Include="Content\Images\dommaly.png" />
+    <Content Include="Content\Images\footer-cd.png" />
+    <Content Include="Content\Images\icons-18-black.png" />
+    <Content Include="Content\Images\icons-18-white.png" />
+    <Content Include="Content\Images\icons-36-black.png" />
+    <Content Include="Content\Images\icons-36-white.png" />
+    <Content Include="Content\Images\koszyk-details.png" />
+    <Content Include="Content\Images\koszyk.png" />
+    <Content Include="Content\Images\koszyk_white.png" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\new.png" />
+    <Content Include="Content\Images\searchlogo.png" />
+    <Content Include="Content\Images\upload.png" />
+    <Content Include="Content\Kategorie\aspnet.png" />
+    <Content Include="Content\Kategorie\csharp.png" />
+    <Content Include="Content\Kategorie\css.png" />
+    <Content Include="Content\Kategorie\html.png" />
+    <Content Include="Content\Kategorie\javascript.png" />
+    <Content Include="Content\Kategorie\jquery.png" />
+    <Content Include="Content\Kategorie\xml.png" />
+    <Content Include="Content\Kursy\obrazekaspnet.png" />
+    <Content Include="Content\Kursy\obrazekcsharp.png" />
+    <Content Include="Content\Kursy\obrazekcss.png" />
+    <Content Include="Content\Kursy\obrazekhtml.png" />
+    <Content Include="Content\Kursy\obrazekjavascript.png" />
+    <Content Include="Content\Kursy\obrazekjquery.png" />
+    <Content Include="Content\Kursy\obrazekmvc.png" />
+    <Content Include="Content\Kursy\obrazekmvc2.png" />
+    <Content Include="Content\Kursy\obrazekxml.png" />
+    <Content Include="Content\Prototype.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Prototype\Index.html" />
+    <Content Include="Prototype\Kategorie.html" />
+    <Content Include="Prototype\Koszyk.html" />
+    <Content Include="Prototype\Kurs.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\KursyContext.cs" />
+    <Compile Include="DAL\KursyInitializer.cs" />
+    <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803291201254_InitialCreate.cs" />
+    <Compile Include="Migrations\201803291201254_InitialCreate.Designer.cs">
+      <DependentUpon>201803291201254_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803291204085_DodaniePolaOpisuSkroconego.cs" />
+    <Compile Include="Migrations\201803291204085_DodaniePolaOpisuSkroconego.Designer.cs">
+      <DependentUpon>201803291204085_DodaniePolaOpisuSkroconego.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Kategoria.cs" />
     <Compile Include="Models\Kurs.cs" />
     <Compile Include="Models\PozycjaZamowienia.cs" />
@@ -112,7 +183,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\ONas.cshtml" />
+    <Content Include="Views\Home\Spolecznosc.cshtml" />
+    <Content Include="Views\Home\Opinie.cshtml" />
+    <Content Include="Views\Home\Pomoc.cshtml" />
+    <Content Include="Views\Home\Regulamin.cshtml" />
+    <Content Include="Views\Home\Kontakt.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -122,7 +206,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803291201254_InitialCreate.resx">
+      <DependentUpon>201803291201254_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803291204085_DodaniePolaOpisuSkroconego.resx">
+      <DependentUpon>201803291204085_DodaniePolaOpisuSkroconego.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
